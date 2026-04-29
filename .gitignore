@@ -1,2 +1,5 @@
 .venv/
-
+profiles.yml
+.env
+target/
+logs/

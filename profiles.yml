@@ -4,11 +4,11 @@ dbt_projet:
     # Configuration locale (Docker PostgreSQL)
     dev:
       type: postgres
-      host: localhost
-      user: root
-      password: root
-      port: 5433
-      dbname: postgres_db
+      host: "{{ env_var('DB_HOST') }}"
+      user: "{{ env_var('DB_USER') }}"
+      password: "{{ env_var('DB_PASSWORD') }}"
+      port: "{{ env_var('DB_PORT') | int }}"
+      dbname: "{{ env_var('DB_NAME') }}"
       schema: staging
       threads: 4
       keepalives_idle: 0
@@ -16,11 +16,11 @@ dbt_projet:
     # Configuration AWS RDS
     aws:
       type: postgres
-      host: p8-dbt-db.ctgus6q4k2eh.eu-west-3.rds.amazonaws.com
-      user: postgres
-      password: Hhah5MPBFgvd2N3
-      port: 5432
-      dbname: postgres
+      host: "{{ env_var('DBT_RDS_HOST') }}"
+      user: "{{ env_var('DBT_RDS_USER') }}"
+      password: "{{ env_var('DBT_RDS_PASSWORD') }}"
+      port: "{{ env_var('DBT_RDS_PORT') | int }}"
+      dbname: "{{ env_var('DBT_RDS_DBNAME') }}"
       schema: staging
       threads: 4
       keepalives_idle: 0
