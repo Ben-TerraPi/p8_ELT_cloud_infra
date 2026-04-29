@@ -1,7 +1,8 @@
 SELECT 
-ROW_NUMBER() OVER (ORDER BY station_id, date_time) AS measurement_id,
+ROW_NUMBER() OVER (ORDER BY station_id, date_time::date, date_time::time) AS measurement_id,
 station_id, 
-date_time,
+date_time::date AS date,
+date_time::time AS time,
 temperature_celsius,
 pression_hpa,
 humidite_pourcentage, 

@@ -1,6 +1,7 @@
 SELECT 
     station_id,
-    date_time,
+    date_time::date AS date,
+    date_time::time AS time,
     temperature_celsius,
     pression_hpa,
     humidite_pourcentage,
@@ -26,7 +27,8 @@ UNION ALL
 
 SELECT 
     station_id,
-    date_time,
+    date_time::date AS date,
+    date_time::time AS time,
     temperature_celsius,
     pression_hpa,
     humidite_pourcentage,

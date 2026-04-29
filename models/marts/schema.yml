@@ -7,7 +7,7 @@ models:
       indexes:
         - columns: [id]
         - columns: [station_id]
-        - columns: [date_time]
+        - columns: [date]
     columns:
       - name: id
         description: "Clé Primaire"
@@ -22,8 +22,12 @@ models:
               arguments:
                 to: ref('dim_weather_stations')
                 field: station_id
-      - name: date_time
-        description: "Date et heure de la mesure"
+      - name: date
+        description: "Date de la mesure"
+        data_tests:
+          - not_null
+      - name: time
+        description: "Heure de la mesure"
         data_tests:
           - not_null
       - name: temperature_celsius
@@ -41,7 +45,7 @@ models:
       indexes:
         - columns: [id]
         - columns: [station_id]
-        - columns: [date_time]
+        - columns: [date]
     columns:
       - name: id
         description: "Clé Primaire"
@@ -56,8 +60,12 @@ models:
               arguments:
                 to: ref('dim_weather_stations')
                 field: station_id
-      - name: date_time
-        description: "Date et heure de la mesure"
+      - name: date
+        description: "Date de la mesure"
+        data_tests:
+          - not_null
+      - name: time
+        description: "Heure de la mesure"
         data_tests:
           - not_null
       - name: temperature_celsius

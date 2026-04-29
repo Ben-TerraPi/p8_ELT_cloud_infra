@@ -3,18 +3,28 @@
     indexes=[
         {'columns': ['id']},
         {'columns': ['station_id']},
-        {'columns': ['date_time']}
+        {'columns': ['date']}
     ],
     post_hook=[
-        "ALTER TABLE {{ this }} ADD CONSTRAINT pk_fact_infoclimat_data PRIMARY KEY (id)",
-        "ALTER TABLE {{ this }} ADD CONSTRAINT fk_fact_infoclimat_station FOREIGN KEY (station_id) REFERENCES {{ ref('dim_weather_stations') }}(station_id)"
+        """
+        DO $$
+        BEGIN
+            ALTER TABLE {{ this }} DROP CONSTRAINT IF EXISTS pk_fact_infoclimat_data;
+            ALTER TABLE {{ this }} ADD CONSTRAINT pk_fact_infoclimat_data PRIMARY KEY (id);
+            ALTER TABLE {{ this }} DROP CONSTRAINT IF EXISTS fk_fact_infoclimat_station;
+            ALTER TABLE {{ this }} ADD CONSTRAINT fk_fact_infoclimat_station FOREIGN KEY (station_id) REFERENCES {{ ref('dim_weather_stations') }}(station_id);
+        EXCEPTION WHEN OTHERS THEN
+            NULL;
+        END $$;
+        """
     ]
 ) }}
 
 SELECT
-ROW_NUMBER() OVER (ORDER BY date_time, station_id) AS id,
+ROW_NUMBER() OVER (ORDER BY date, time, station_id) AS id,
 station_id,  
-date_time, 
+date,
+time,
 temperature_celsius, 
 pression_hpa, 
 humidite_pourcentage, 
