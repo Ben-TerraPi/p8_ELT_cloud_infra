@@ -1,0 +1,22 @@
+version: 2
+
+sources:
+  - name: raw
+    database: postgres_db
+    schema: projet_8
+    tables:
+      - name: infoclimat_data
+      - name: be011024
+      - name: be021024
+      - name: be031024
+      - name: be041024
+      - name: be051024
+      - name: be061024
+      - name: be071024
+      - name: fr011024
+      - name: fr021024
+      - name: fr031024
+      - name: fr041024
+      - name: fr051024
+      - name: fr061024
+      - name: fr071024

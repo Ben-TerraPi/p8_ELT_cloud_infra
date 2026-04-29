@@ -1,0 +1,82 @@
+version: 2
+
+models:
+  - name: fact_underground_data
+    description: "Table des faits pour les données Underground avec PK et FK"
+    config:
+      indexes:
+        - columns: [id]
+        - columns: [station_id]
+        - columns: [date_time]
+    columns:
+      - name: id
+        description: "Clé Primaire"
+        data_tests:
+          - unique
+          - not_null
+      - name: station_id
+        description: "Clé Étrangère"
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_weather_stations')
+                field: station_id
+      - name: date_time
+        description: "Date et heure de la mesure"
+        data_tests:
+          - not_null
+      - name: temperature_celsius
+        description: "Température en Celsius"
+        data_tests:
+          - not_null
+      - name: humidite_pourcentage
+        description: "Humidité (%)"
+        data_tests:
+          - not_null
+
+  - name: fact_infoclimat_data
+    description: "Table des faits pour les données Infoclimat avec PK et FK"
+    config:
+      indexes:
+        - columns: [id]
+        - columns: [station_id]
+        - columns: [date_time]
+    columns:
+      - name: id
+        description: "Clé Primaire"
+        data_tests:
+          - unique
+          - not_null
+      - name: station_id
+        description: "Clé Étrangère"
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_weather_stations')
+                field: station_id
+      - name: date_time
+        description: "Date et heure de la mesure"
+        data_tests:
+          - not_null
+      - name: temperature_celsius
+        description: "Température en Celsius"
+        data_tests:
+          - not_null
+      - name: humidite_pourcentage
+        description: "Humidité (%)"
+        data_tests:
+          - not_null
+
+  - name: dim_weather_stations
+    description: "Dimension des stations météo"
+    config:
+      indexes:
+        - columns: [station_id]
+    columns:
+      - name: station_id
+        description: "Identifiant unique de la station (Clé Primaire)"
+        data_tests:
+          - unique
+          - not_null

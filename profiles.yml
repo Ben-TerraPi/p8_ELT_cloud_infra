@@ -1,0 +1,26 @@
+dbt_projet:
+  target: dev
+  outputs:
+    # Configuration locale (Docker PostgreSQL)
+    dev:
+      type: postgres
+      host: localhost
+      user: root
+      password: root
+      port: 5433
+      dbname: postgres_db
+      schema: staging
+      threads: 4
+      keepalives_idle: 0
+
+    # Configuration AWS RDS
+    aws:
+      type: postgres
+      host: p8-dbt-db.ctgus6q4k2eh.eu-west-3.rds.amazonaws.com
+      user: postgres
+      password: Hhah5MPBFgvd2N3
+      port: 5432
+      dbname: postgres
+      schema: staging
+      threads: 4
+      keepalives_idle: 0

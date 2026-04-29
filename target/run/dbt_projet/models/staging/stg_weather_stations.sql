@@ -1,0 +1,21 @@
+
+  create view "postgres_db"."projet_8"."stg_weather_stations__dbt_tmp"
+    
+    
+  as (
+    SELECT 
+    station_id,
+    station_name,
+    latitude,
+    longitude,
+    elevation_meters,
+    city,
+    state,
+    hardware,
+    software
+FROM (
+    VALUES
+        ('ILAMAD25', 'La Madeleine', 50.659, 3.07, 23, 'La Madeleine', 'France', 'other', 'EasyWeatherPro_V5.1.6'),
+        ('IICHTE19', 'WeerstationBS', 51.092, 2.999, 15, 'Ichtegem', 'Belgique', 'other', 'EasyWeatherV1.6.6')
+) AS stations(station_id, station_name, latitude, longitude, elevation_meters, city, state, hardware, software)
+  );

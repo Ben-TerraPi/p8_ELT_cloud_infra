@@ -1,0 +1,23 @@
+Airbyte UI: http://localhost:8000
+
+
+
+Résumé de ce que vous avez fait
+✅ PostgreSQL en Docker (port 5433)
+✅ dbt Core installé localement
+✅ profiles.yml configuré
+✅ dbt_project.yml créé
+✅ Structure des dossiers prête
+
+les colonnes:
+- visibilite, 
+- nebulosite, 
+- temps_omm,
+-  neige_au_sol 
+manquent pour les stations 00052 et 000R5, alors qu'elles existent pour 07015.
+
+
+mdp aws: Fm7WawV7Az7tv9y
+
+endpoint :
+p8-dbt-db.ctgus6q4k2eh.eu-west-3.rds.amazonaws.com
