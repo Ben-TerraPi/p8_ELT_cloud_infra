@@ -2,7 +2,6 @@ version: 2
 
 sources:
   - name: raw
-    database: postgres_db
     schema: projet_8
     tables:
       - name: infoclimat_data
