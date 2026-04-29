@@ -2,19 +2,23 @@ FROM python:3.11-slim
 
 WORKDIR /app
 
-# Installer dependencies système
+# Installer les dépendances système
 RUN apt-get update && apt-get install -y \
     git \
     postgresql-client \
     && rm -rf /var/lib/apt/lists/*
 
-# Copier le projet dbt entier
+# Copier le projet
 COPY . /app/
 
 # Installer Python dependencies
 RUN pip install --upgrade pip setuptools wheel && \
-    pip install dbt-postgres
+    pip install -r requirements.txt
 
-# Exécuter dbt
+# Variables d'environnement par défaut
+ENV DBT_PROFILES_DIR=/app
+ENV DBT_TARGET=aws
+
+# Commande par défaut : lancer dbt run
 ENTRYPOINT ["dbt"]
-CMD ["run", "--profiles-dir", ".", "--target", "aws"]
+CMD ["run", "--profiles-dir", "/app"]
