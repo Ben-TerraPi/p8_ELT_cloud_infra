@@ -3,3 +3,6 @@
 target/
 logs/
 .user.yml
+dbt.txt
+p8.txt
+airbyte.txt
