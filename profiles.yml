@@ -1,5 +1,5 @@
 dbt_projet:
-  target: dev
+  target: aws
   outputs:
     # Configuration locale (Docker PostgreSQL)
     dev:
