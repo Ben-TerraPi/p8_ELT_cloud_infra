@@ -15,3 +15,7 @@ target-path: "target"
 clean-targets:
   - "target"
   - "dbt_packages"
+
+tests:
+  dbt_projet:
+    +severity: error

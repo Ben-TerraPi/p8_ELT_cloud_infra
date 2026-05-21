@@ -1,3 +1,4 @@
+-- {{ config(severity = "error") }}
 -- Vérifier qu'on n'a pas de doublons station_id/date_time
 SELECT station_id, date_time, COUNT(*) as cnt
 FROM {{ ref('fact_underground_data') }}
