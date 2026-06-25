@@ -6,7 +6,11 @@ Titre du projet :
 
 `Construisez et testez une infrastructure de données`
 
-Plateforme de données cloud dédiée à l'intégration de données météorologiques multi-sources. Le projet s'appuie sur Airbyte pour l'ingestion automatisée vers PostgreSQL sur AWS et sur dbt pour la transformation, la modélisation et le contrôle qualité des données. L'architecture garantit des flux automatisés, traçables et fiables pour les besoins analytiques et de machine learning.
+Ce projet consiste en la conception et l'implémentation d'une plateforme de données cloud permettant l'intégration de données météorologiques issues de plusieurs sources hétérogènes.
+
+Un pipeline ELT basé sur Airbyte assure l'ingestion automatisée des données vers une base PostgreSQL hébergée sur AWS, tandis que dbt est utilisé pour la transformation, la modélisation analytique, la documentation et les contrôles de qualité.
+
+L'architecture mise en place garantit l'automatisation des flux, la traçabilité des transformations et la mise à disposition de données fiables pour les usages analytiques.
 
 
 # Flux de données
