@@ -16,3 +16,5 @@ Plateforme de données cloud dédiée à l'intégration de données météorolog
 # Architecture AWS
 
 ![Architecture AWS](images/infra.png)
+
+[Lien](https://docs.google.com/presentation/d/1ItOEW_ZTM2ecYZj3CVo8IQgFGeuddFgCQs51-JQUdH4/edit?usp=sharing) du support de présentation avec les captures d'écran des éléments cloud configurés.
