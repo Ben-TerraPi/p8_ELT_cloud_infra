@@ -12,3 +12,7 @@ Plateforme de données cloud dédiée à l'intégration de données météorolog
 # Flux de données
 
 ![Flux de données](images/flux.png)
+
+# Architecture AWS
+
+![Architecture AWS](images/infra.png)
