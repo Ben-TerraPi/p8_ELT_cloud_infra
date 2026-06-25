@@ -6,23 +6,9 @@ Titre du projet :
 
 `Construisez et testez une infrastructure de données`
 
-## Installations
+Plateforme de données cloud dédiée à l'intégration de données météorologiques multi-sources. Le projet s'appuie sur Airbyte pour l'ingestion automatisée vers PostgreSQL sur AWS et sur dbt pour la transformation, la modélisation et le contrôle qualité des données. L'architecture garantit des flux automatisés, traçables et fiables pour les besoins analytiques et de machine learning.
 
-### Docker
 
-[Docker Desktop](https://www.docker.com/products/docker-desktop/) (windows/mac)
-[Docker Engine](https://docs.docker.com/engine/install/) (Linux)
+# Flux de données
 
-# Conteneurisation avec Docker
-
-## Fonctionnement
-
-**Docker** permet d’exécuter l'application dans un environnement isolé, appelé « conteneur », qui contient tout ce dont elle a besoin (Python, dépendances, code…).
-
-**Docker Compose** permet de lancer plusieurs conteneurs qui communiquent ensemble (ici : un pour MongoDB, un pour le script Python).
-
-## Structure des fichiers importants
-
-- **Dockerfile** : décrit comment construire l’image de l'application Python.
-- **docker-compose.yml** : décrit comment lancer les différents conteneurs (MongoDB + application).
-- **requirements.txt** : liste les librairies Python à installer dans le conteneur.
+![image]("images\Capture d’écran 2026-06-25 164601.png")
