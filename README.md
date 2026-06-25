@@ -11,4 +11,4 @@ Plateforme de données cloud dédiée à l'intégration de données météorolog
 
 # Flux de données
 
-![image]("images\Capture d’écran 2026-06-25 164601.png")
+![image](images\flux.png)
