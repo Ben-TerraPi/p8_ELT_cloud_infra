@@ -4,7 +4,7 @@ Ce projet a été réalisé dans le cadre du parcours de formation Data Engineer
 
 Titre du projet :
 
-`Construisez et testez une infrastructure de données`
+**Construisez et testez une infrastructure de données**
 
 Ce projet consiste en la conception et l'implémentation d'une plateforme de données cloud permettant l'intégration de données météorologiques issues de plusieurs sources hétérogènes.
 
